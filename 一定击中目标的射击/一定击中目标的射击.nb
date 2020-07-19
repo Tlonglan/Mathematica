@@ -1,0 +1,476 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21935,        468]
+NotebookOptionsPosition[     21460,        450]
+NotebookOutlinePosition[     21848,        467]
+CellTagsIndexPosition[     21805,        464]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Manipulate\:7684\:7528\:6cd5\:662f", "\:ff0c", 
+    "\:5728\:7b2c\:4e00\:4e2a\:9017\:53f7\:4e4b\:524d\:6240\:6709\:7684\:8868\
+\:8fbe\:5f0f\:5168\:90e8\:90fd\:88ab\:5224\:5b9a\:4e3a\:8981\:6267\:884c\:7684\
+\:8868\:8fbe\:5f0f", "\:ff0c", 
+    "\:7b2c\:4e00\:4e2a\:9017\:53f7\:4e4b\:540e\:7684\:6240\:6709\:8868\:8fbe\
+\:5f0f\:4e3a\:53d8\:91cf"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:6267\:884c\:8868\:8fbe\:5f0f\:7684\:7f16\:5199\:987a\:5e8f\:4f3c\:4e4e\
+\:6ca1\:6709\:8981\:6c42", "\:ff0c", 
+    "\:53ef\:4ee5\:5148\:4f7f\:7528\:518d\:5b9a\:4e49", "\:ff1f"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+  "(*", "\:5b50\:5f39\:548c\:9776\:4f53\:7684\:5750\:6807\:5e8f\:5217", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"vx", "=", 
+     RowBox[{"xp", "*", 
+      RowBox[{"vy", "/", "yp"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"p", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"xp", "*", 
+          RowBox[{"vy", "/", "yp"}]}], ")"}], "*", "t"}], ",", 
+       RowBox[{
+        RowBox[{"vy", "*", "t"}], "-", 
+        RowBox[{"0.5", "*", "g", "*", 
+         RowBox[{"t", "^", "2"}]}]}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"p1", "=", 
+     RowBox[{"{", 
+      RowBox[{"xp", ",", 
+       RowBox[{"yp", "-", 
+        RowBox[{"0.5", "*", "g", "*", 
+         RowBox[{"t", "^", "2"}]}]}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "\:5b9a\:4f4d\:5668\:7684\:5750\:6807", "\:ff0c", 
+      "\:52a8\:753b\:6846\:7684\:663e\:793a\:8303"}], "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"xp", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Dynamic", "[", "L", "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"yp", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Dynamic", "[", "L", "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"x", "=", 
+       RowBox[{"2", "*", "xp"}]}], ";", 
+      RowBox[{"y", "=", 
+       RowBox[{"1.5", "*", "yp"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "\:9776\:4f53\:88ab\:5b50\:5f39\:51fb\:4e2d\:540e\:4e24\:8005\:7684\:53d8\
+\:5316", "\:ff1a", "\:9776\:4f53\:53d8\:5927\:53d8\:7ea2", "\:ff0c", 
+      "\:5b50\:5f39\:53d8\:9ec4"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"vx", "/", "vy"}], "\[Equal]", 
+        RowBox[{"xp", "/", "yp"}]}], "&&", 
+       RowBox[{
+        RowBox[{"vx", "*", "t"}], ">=", "xp"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"c", "=", "Green"}], ",", 
+        RowBox[{"r1", "=", "0.1"}], ",", 
+        RowBox[{"c1", "=", "Red"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"c", "=", "Blue"}], ",", 
+        RowBox[{"r1", "=", "0.05"}], ",", 
+        RowBox[{"c1", "=", "Green"}]}], "}"}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", "\:6574\:5408\:52a8\:753b", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Dynamic", "[", 
+     RowBox[{"Show", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"PointSize", "[", "r1", "]"}], ",", "c1", ",", 
+              RowBox[{"Point", "[", 
+               RowBox[{"{", 
+                RowBox[{"xp", ",", 
+                 RowBox[{"yp", "-", 
+                  RowBox[{"0.5", "*", "g", "*", 
+                   RowBox[{"t", "^", "2"}]}]}]}], "}"}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"PointSize", "[", "0.05", "]"}], ",", "c", ",", 
+              RowBox[{"Point", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"vx", "*", "t"}], ",", 
+                 RowBox[{
+                  RowBox[{"vy", "*", "t"}], "-", 
+                  RowBox[{"0.5", "*", "g", "*", 
+                   RowBox[{"t", "^", "2"}]}]}]}], "}"}], "]"}]}], "}"}], ",", 
+            RowBox[{"Text", "[", 
+             RowBox[{"\"\<\:4e24\:4e2a\:7403\:7684\:8ddd\:79bb:\>\"", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"2", 
+                 RowBox[{"x", "/", "3"}]}], ",", 
+                RowBox[{"y", "-", "1"}]}], "}"}]}], "]"}], ",", 
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Chop", "[", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"p", "-", "p1"}], ")"}], "//", "Norm"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"2", 
+                 RowBox[{"x", "/", "3"}]}], ",", 
+                RowBox[{"y", "-", "1.5"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+          RowBox[{"Axes", "->", "True"}], ",", 
+          RowBox[{"Ticks", "\[Rule]", "True"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "x"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "y"}], ",", "y"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"vx", "*", "t"}], ",", 
+            RowBox[{
+             RowBox[{"vy", "*", "t"}], "-", 
+             RowBox[{"0.5", "*", "g", "*", 
+              RowBox[{"t", "^", "2"}]}]}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "t"}], "}"}]}], "]"}]}], "}"}], "]"}], 
+     "\[IndentingNewLine]", "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"L", ",", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "5"}], "}"}]}], "}"}], ",", "Locator"}], "}"}], ",", 
+   RowBox[{"Item", "[", 
+    RowBox[{
+    "\"\<\:4e00\:5b9a\:4f1a\:51fb\:4e2d\:76ee\:6807\:7684\:5b50\:5f39\\n\>\"",
+      ",", " ", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"vy", ",", "2", ",", "\"\<\:7ad6\:76f4\:901f\:5ea6\>\""}], 
+      "}"}], ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "1", ",", "\"\<\:91cd\:529b\:52a0\:901f\:5ea6\>\""}], 
+      "}"}], ",", "0.5", ",", "3", ",", "0.2"}], "}"}], ",", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"2", "*", "xp"}]}], "}"}], ",", 
+     RowBox[{"2", "*", "xp"}], ",", 
+     RowBox[{"4", "*", "xp"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"1.5", "*", "yp"}]}], "}"}], ",", "yp", ",", 
+     RowBox[{"2", "*", "yp"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "2", ",", "\"\<\:65f6\:95f4\>\""}], "}"}], ",", 
+     "0.01", ",", "5", ",", "0.01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<\:65f6\:95f4\:590d\:4f4d\>\"", ",", 
+     RowBox[{"t", "=", "0.01"}]}], "]"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8017173384538436`*^9, 3.801717496480198*^9}, 
+   3.801717869762972*^9, {3.8017180051313405`*^9, 3.801718102747966*^9}, {
+   3.8017181652581053`*^9, 3.801718213763286*^9}, {3.8017182911099186`*^9, 
+   3.801718293578521*^9}, 3.80171859078102*^9, {3.801718641638847*^9, 
+   3.801718654686363*^9}, 3.8017188080993843`*^9, {3.801718937866928*^9, 
+   3.801718942507287*^9}, {3.801719196554864*^9, 3.8017192659305644`*^9}, {
+   3.80172065221356*^9, 3.8017206852416162`*^9}, {3.801720731458104*^9, 
+   3.8017207317459407`*^9}, {3.80172132641045*^9, 3.8017213536778135`*^9}, 
+   3.801721623485052*^9, {3.8017242284384995`*^9, 3.801724266268783*^9}, {
+   3.801724314476123*^9, 3.8017243204217167`*^9}, {3.801724354247311*^9, 
+   3.801724354631092*^9}, {3.8017244219804583`*^9, 3.8017244274213576`*^9}, {
+   3.801724473349992*^9, 3.8017245004324837`*^9}, {3.8017245914113197`*^9, 
+   3.8017245939608345`*^9}, {3.8017247022946978`*^9, 3.801724750096278*^9}, {
+   3.801725831495967*^9, 3.801725834181426*^9}, {3.8017297992280188`*^9, 
+   3.801730035271129*^9}, 3.801730067474919*^9, 3.801730117307356*^9, {
+   3.8017302079173584`*^9, 3.801730222219178*^9}, 3.801730302030396*^9, 
+   3.801730342152382*^9, {3.801730388621703*^9, 3.8017303971178527`*^9}, {
+   3.801730455265478*^9, 3.8017304644032564`*^9}, {3.8017305944036713`*^9, 
+   3.8017306416725597`*^9}, {3.801732275522513*^9, 3.8017323031566634`*^9}, {
+   3.801732358907726*^9, 3.8017324156801424`*^9}, {3.80173666226764*^9, 
+   3.8017366677595296`*^9}, {3.8017368667089067`*^9, 
+   3.8017368685078745`*^9}, {3.801737266441614*^9, 3.801737299429695*^9}, {
+   3.801737391410954*^9, 3.801737432050647*^9}, {3.801737465448492*^9, 
+   3.8017374679000854`*^9}, 3.801737647436098*^9, {3.801737964311355*^9, 
+   3.801738126946067*^9}, {3.8017381595703535`*^9, 3.8017382806788816`*^9}, {
+   3.801738320378112*^9, 3.801738332820994*^9}, {3.801738572920247*^9, 
+   3.80173864758344*^9}, {3.8017388139959855`*^9, 3.8017388285186553`*^9}, {
+   3.8017388712652693`*^9, 3.8017388797723927`*^9}, {3.80173891605258*^9, 
+   3.8017390595952425`*^9}, {3.8017391078245764`*^9, 
+   3.8017392510454216`*^9}, {3.801739289433402*^9, 3.80173934567714*^9}, {
+   3.8017396138663034`*^9, 3.801739641048712*^9}, {3.801739811638858*^9, 
+   3.8017398122125287`*^9}, {3.8017398428029814`*^9, 3.801739867521804*^9}, {
+   3.8017399470312138`*^9, 3.801740269966956*^9}, {3.801740470606511*^9, 
+   3.8017406082950325`*^9}, {3.8017421872978935`*^9, 
+   3.8017422147279015`*^9}, {3.801743037475093*^9, 3.801743121816714*^9}, {
+   3.8017433750684443`*^9, 3.8017434211450357`*^9}, {3.8017434552264767`*^9, 
+   3.8017435103528433`*^9}, {3.8017436765974836`*^9, 3.8017436845159626`*^9}, 
+   3.801745171102704*^9, {3.801745261031308*^9, 3.8017452874141536`*^9}, {
+   3.801745493422359*^9, 3.8017455197042837`*^9}, 3.8017455508004255`*^9, 
+   3.8017455848449125`*^9, {3.8017456156052885`*^9, 3.801745633306134*^9}, {
+   3.801745787053923*^9, 3.801745824550419*^9}, {3.801745886759731*^9, 
+   3.801745949593707*^9}, {3.801745986662446*^9, 3.8017460595106597`*^9}, {
+   3.8017461024430113`*^9, 3.801746102951741*^9}, {3.801746812891797*^9, 
+   3.8017468806559086`*^9}, {3.801746915945668*^9, 3.801746958905043*^9}, {
+   3.8017469942127676`*^9, 3.80174700292577*^9}, {3.8017470770912495`*^9, 
+   3.801747084594923*^9}, {3.8017471325094604`*^9, 3.801747138715898*^9}, {
+   3.801747179532487*^9, 3.801747263253442*^9}, 3.8017473082596474`*^9, {
+   3.801747389220186*^9, 3.8017474381081448`*^9}, 3.80174747123416*^9, {
+   3.8017475152478943`*^9, 3.801747536102931*^9}, {3.801831062775756*^9, 
+   3.8018311528903217`*^9}, {3.8018312255996847`*^9, 3.801831243378597*^9}, {
+   3.8018312875859394`*^9, 3.8018314106181965`*^9}, {3.8018314421663036`*^9, 
+   3.8018314641949763`*^9}, {3.801831761396065*^9, 3.8018318811709146`*^9}, {
+   3.801831939237421*^9, 3.8018319682156754`*^9}, {3.8018320934413576`*^9, 
+   3.801832099430979*^9}, {3.8018321298491526`*^9, 3.8018325284915695`*^9}, {
+   3.8018326245674953`*^9, 3.8018327414205093`*^9}, {3.801832863928335*^9, 
+   3.801832887006977*^9}, {3.8018329238547287`*^9, 3.8018329904434276`*^9}, {
+   3.801833094207201*^9, 3.8018331207756004`*^9}, {3.8018332670566354`*^9, 
+   3.8018332938649983`*^9}, {3.8018333279246187`*^9, 3.8018333296645126`*^9}, 
+   3.8018334392578897`*^9, {3.801835254715108*^9, 3.8018353059630613`*^9}, {
+   3.801835357579488*^9, 3.801835360433921*^9}, {3.8019505351378927`*^9, 
+   3.8019506083058586`*^9}, {3.801950714875242*^9, 3.8019507166451015`*^9}, {
+   3.8019983935856447`*^9, 3.8019984002752075`*^9}, {3.8019984340764575`*^9, 
+   3.8019985437998466`*^9}, {3.8019986092284937`*^9, 3.801998728731348*^9}, {
+   3.8020092193343153`*^9, 3.8020092751809235`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"cf262f80-6bc5-433f-ba12-5fee18fbca67"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{CloudObject`Private`g$$ = 0.9, 
+    CloudObject`Private`L$$ = {5.65, 2.7800000000000002`}, $CellContext`t$$ = 
+    3.02, CloudObject`Private`vy$$ = 1.36, $CellContext`x$$ = 
+    13.088880000000007`, $CellContext`y$$ = 4.736520000000005, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[CloudObject`Private`L$$], {5, 5}}, Automatic}, {
+      Hold[
+       Item[
+       "\:4e00\:5b9a\:4f1a\:51fb\:4e2d\:76ee\:6807\:7684\:5b50\:5f39\n", 
+        Alignment -> Center]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[CloudObject`Private`vy$$], 2, "\:7ad6\:76f4\:901f\:5ea6"}, 0, 
+      3}, {{
+       Hold[CloudObject`Private`g$$], 1, "\:91cd\:529b\:52a0\:901f\:5ea6"}, 
+      0.5, 3, 0.2}, {{
+       Hold[$CellContext`x$$], 11.88}, 11.88, 23.76}, {{
+       Hold[$CellContext`y$$], 8.39475}, 5.5965, 11.193}, {{
+       Hold[$CellContext`t$$], 2, "\:65f6\:95f4"}, 0.01, 5, 0.01}, {
+      Hold[
+       Button["\:65f6\:95f4\:590d\:4f4d", $CellContext`t$$ = 0.01]], 
+      Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    432., {147., 153.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, CloudObject`Private`vy$75797$$ = 0, 
+    CloudObject`Private`g$75798$$ = 0, $CellContext`x$75799$$ = 
+    0, $CellContext`y$75800$$ = 0, $CellContext`t$75801$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       CloudObject`Private`g$$ = 1, 
+        CloudObject`Private`L$$ = {5, 5}, $CellContext`t$$ = 2, 
+        CloudObject`Private`vy$$ = 2, $CellContext`x$$ = 
+        2 $CellContext`xp, $CellContext`y$$ = 1.5 $CellContext`yp}, 
+      "ControllerVariables" :> {
+        Hold[CloudObject`Private`vy$$, CloudObject`Private`vy$75797$$, 0], 
+        Hold[CloudObject`Private`g$$, CloudObject`Private`g$75798$$, 0], 
+        Hold[$CellContext`x$$, $CellContext`x$75799$$, 0], 
+        Hold[$CellContext`y$$, $CellContext`y$75800$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$75801$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (
+       CloudObject`Private`vx = $CellContext`xp (
+          CloudObject`Private`vy$$/$CellContext`yp); $CellContext`p = \
+{($CellContext`xp (
+            CloudObject`Private`vy$$/$CellContext`yp)) $CellContext`t$$, 
+          CloudObject`Private`vy$$ $CellContext`t$$ - (0.5 
+           CloudObject`Private`g$$) $CellContext`t$$^2}; $CellContext`p1 = \
+{$CellContext`xp, $CellContext`yp - (0.5 
+           CloudObject`Private`g$$) $CellContext`t$$^2}; $CellContext`xp = 
+        Part[
+          Part[
+           Dynamic[CloudObject`Private`L$$], 1], 1]; $CellContext`yp = Part[
+          Part[
+           Dynamic[CloudObject`Private`L$$], 1], 2]; If[
+         And[
+         CloudObject`Private`vx/
+           CloudObject`Private`vy$$ == $CellContext`xp/$CellContext`yp, 
+          CloudObject`Private`vx $CellContext`t$$ >= $CellContext`xp], \
+{$CellContext`c = Green, $CellContext`r1 = 0.1, $CellContext`c1 = 
+          Red}, {$CellContext`c = Blue, $CellContext`r1 = 
+          0.05, $CellContext`c1 = Green}]; Dynamic[
+         Show[{
+           Graphics[{{
+              PointSize[$CellContext`r1], $CellContext`c1, 
+              
+              Point[{$CellContext`xp, $CellContext`yp - (0.5 
+                 CloudObject`Private`g$$) $CellContext`t$$^2}]}, {
+              PointSize[0.05], $CellContext`c, 
+              
+              Point[{CloudObject`Private`vx $CellContext`t$$, 
+                CloudObject`Private`vy$$ $CellContext`t$$ - (0.5 
+                 CloudObject`Private`g$$) $CellContext`t$$^2}]}, 
+             Text[
+             "\:4e24\:4e2a\:7403\:7684\:8ddd\:79bb:", {
+              2 ($CellContext`x$$/3), $CellContext`y$$ - 1}], 
+             Text[
+              Chop[
+               Norm[$CellContext`p - $CellContext`p1]], {
+              2 ($CellContext`x$$/3), $CellContext`y$$ - 1.5}]}, Axes -> True,
+             Ticks -> True, 
+            PlotRange -> {{
+              0, $CellContext`x$$}, {-$CellContext`y$$, $CellContext`y$$}}], 
+           
+           ParametricPlot[{
+            CloudObject`Private`vx $CellContext`t$$, 
+             CloudObject`Private`vy$$ $CellContext`t$$ - (0.5 
+              CloudObject`Private`g$$) $CellContext`t$$^2}, {$CellContext`t$$,
+              0, $CellContext`t$$}]}]]), 
+      "Specifications" :> {{{CloudObject`Private`L$$, {5, 5}}, Automatic, 
+         ControlType -> Locator}, 
+        Item[
+        "\:4e00\:5b9a\:4f1a\:51fb\:4e2d\:76ee\:6807\:7684\:5b50\:5f39\n", 
+         Alignment -> Center], {{
+         CloudObject`Private`vy$$, 2, "\:7ad6\:76f4\:901f\:5ea6"}, 0, 3}, {{
+         CloudObject`Private`g$$, 1, "\:91cd\:529b\:52a0\:901f\:5ea6"}, 0.5, 
+         3, 0.2}, {{$CellContext`x$$, 2 $CellContext`xp}, 2 $CellContext`xp, 
+         4 $CellContext`xp}, {{$CellContext`y$$, 
+          1.5 $CellContext`yp}, $CellContext`yp, 
+         2 $CellContext`yp}, {{$CellContext`t$$, 2, "\:65f6\:95f4"}, 0.01, 5, 
+         0.01, Appearance -> "Open"}, 
+        Button["\:65f6\:95f4\:590d\:4f4d", $CellContext`t$$ = 0.01]}, 
+      "Options" :> {ControlPlacement -> Right}, "DefaultOptions" :> {}],
+     ImageSizeCache->{857., {187., 194.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.801739642218049*^9, 3.8017398133618684`*^9, {3.801739858680895*^9, 
+   3.8017398681254773`*^9}, {3.801740003396862*^9, 3.8017400620342484`*^9}, {
+   3.8017401019843106`*^9, 3.8017401485945773`*^9}, {3.801740203471097*^9, 
+   3.801740270465667*^9}, {3.8017404981813784`*^9, 3.801740525677024*^9}, {
+   3.8017405649156427`*^9, 3.8017405718971214`*^9}, 3.801740608745466*^9, 
+   3.8017422154735203`*^9, 3.801742753801812*^9, {3.8017430463180227`*^9, 
+   3.8017430737443123`*^9}, 3.801743123169937*^9, 3.801743424754969*^9, {
+   3.8017436697274246`*^9, 3.8017436850816164`*^9}, {3.8017452676215067`*^9, 
+   3.801745289084197*^9}, 3.8017455227784986`*^9, 3.8017455860732355`*^9, 
+   3.8017456351980524`*^9, 3.8017458268920717`*^9, {3.801745898901766*^9, 
+   3.8017459170353637`*^9}, {3.8017459505211577`*^9, 3.801746018471179*^9}, 
+   3.8017460653872895`*^9, 3.80174610458978*^9, {3.801746827653309*^9, 
+   3.8017468451482735`*^9}, 3.8017468826158047`*^9, 3.80174696073697*^9, 
+   3.8017470035574083`*^9, 3.801747085252546*^9, 3.8017471393135357`*^9, 
+   3.801747205026841*^9, 3.8017472777491283`*^9, 3.8017473107232122`*^9, {
+   3.801747456825409*^9, 3.801747472759267*^9}, {3.8017475210435915`*^9, 
+   3.801747537255271*^9}, 3.8018311620634813`*^9, {3.801831232929245*^9, 
+   3.8018312457684507`*^9}, {3.801831294935498*^9, 3.8018314027786694`*^9}, 
+   3.8018314925232987`*^9, 3.8018317794349594`*^9, 3.801831894470091*^9, {
+   3.801831948096871*^9, 3.8018319733553743`*^9}, {3.8018321073805027`*^9, 
+   3.801832137578709*^9}, 3.801832279953332*^9, {3.8018326298571806`*^9, 
+   3.8018327433803616`*^9}, 3.801832992243318*^9, 3.801833121485549*^9, {
+   3.801833202910493*^9, 3.801833205670297*^9}, 3.8018332961148562`*^9, 
+   3.801833331294383*^9, {3.801833483218484*^9, 3.801833498367586*^9}, {
+   3.801835299449271*^9, 3.8018353073674746`*^9}, 3.8019507236946974`*^9, 
+   3.801998547639617*^9, {3.801998703982822*^9, 3.801998732231106*^9}, {
+   3.802009236373277*^9, 3.802009283050459*^9}, {3.8021758161877675`*^9, 
+   3.802175817420063*^9}, {3.80217585037418*^9, 3.802175851225671*^9}},
+ CellLabel->"Out[33]=",ExpressionUUID->"860d38f1-e45a-4da1-bf03-6246a19010c9"]
+}, Open  ]]
+},
+WindowSize->{1172, 768},
+WindowMargins->{{243, Automatic}, {10, Automatic}},
+Magnification:>1.2 Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 12668, 274, 994, "Input",ExpressionUUID->"cf262f80-6bc5-433f-ba12-5fee18fbca67"],
+Cell[13251, 298, 8193, 149, 403, "Output",ExpressionUUID->"860d38f1-e45a-4da1-bf03-6246a19010c9"]
+}, Open  ]]
+}
+]
+*)
+
